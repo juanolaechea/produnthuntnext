@@ -5,13 +5,13 @@ import Layout from '../components/layout/Layout';
 
 
 
-export default function Home() {
+export default function NuevoProducto() {
   return (
     
     <div>
 
       <Layout>
-        <h1>Inicio</h1>
+        <h1>Nuevo Porducto</h1>
       </Layout>
       
 
