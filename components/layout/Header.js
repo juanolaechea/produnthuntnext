@@ -4,9 +4,9 @@ import Link from "next/Link";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 
-import Buscar from "../iu/Buscar";
+import Buscar from "../ui/Buscar";
 import Navegacion from "./Navegacion";
-import Boton from "../iu/Boton";
+import Boton from "../ui/Boton";
 
 const ContenedorHeader = styled.div`
   max-width: 1500px;
