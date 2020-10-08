@@ -3,21 +3,49 @@ import { css } from "@emotion/core";
 import Layout from "../components/layout/Layout";
 import { Formulario, Campo, InputSubmit } from "../components/ui/Formulario";
 
+//validaciones
+import useValidacion from "../hooks/useValidacion";
+import validarCrearCuenta from "../validacion/validarCrearCuenta";
+
+const STATE_INICIAL = {
+  nombre: "",
+  email: "",
+  password: "",
+};
+
 const Encabesazo = styled.h1`
   text-align: center;
   margin-top: 5rem;
 `;
 
-
 export default function CrearCuenta() {
+
+  const {
+    valores,
+    errores,
+    submitForm,
+    handleSubmit,
+    handleChange,
+  } = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
+
+  const { nombre, email, password } = valores;
+  
+
+
+  function crearCuenta() {
+    console.log("Creando cuenta ");
+  }
+
   return (
     <div>
       <Layout>
         <>
-          <Encabesazo>
-            Crear cuenta
-          </Encabesazo>
-          <Formulario>
+          <Encabesazo>Crear cuenta</Encabesazo>
+          <Formulario
+          
+            onSubmit={handleSubmit}
+          
+          >
             <Campo>
               <label htmlFor="nombre"> Nombre </label>
               <input
@@ -25,7 +53,8 @@ export default function CrearCuenta() {
                 id="nombre"
                 placeholder="Tu Nombre..."
                 name="nombre"
-                value=""
+                value={nombre}
+                onChange={handleChange}
               />
             </Campo>
 
@@ -36,7 +65,8 @@ export default function CrearCuenta() {
                 id="email"
                 placeholder="Tu Email..."
                 name="email"
-                value=""
+                value={email}
+                onChange={handleChange}
               />
             </Campo>
 
@@ -47,7 +77,8 @@ export default function CrearCuenta() {
                 id="password"
                 placeholder="Tu Password..."
                 name="password"
-                value=""
+                value={password}
+                onChange={handleChange}
               />
             </Campo>
             <InputSubmit type="submit" value="Crear cuenta" />
