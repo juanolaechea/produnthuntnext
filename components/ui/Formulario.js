@@ -12,13 +12,13 @@ export const Campo = styled.div`
   align-items: center;
 
   label {
-    flex:0 0 150px;
-    font-size:1.8rem;
+    flex: 0 0 150px;
+    font-size: 1.8rem;
   }
 
   input {
-    flex:1;
-    padding:1rem;
+    flex: 1;
+    padding: 1rem;
   }
 `;
 
@@ -37,4 +37,16 @@ export const InputSubmit = styled.input`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const Error = styled.p`
+  background-color: red;
+  font-family: "PT Sans", sans-serif;
+  padding: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #fff;
+  margin: 2rem 0;
 `;
