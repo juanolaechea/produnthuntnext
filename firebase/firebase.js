@@ -22,6 +22,11 @@ class Firebase {
       displayName: nombre,
     });
   }
+
+  // inicio sesion usuario
+  async iniciarSesion(email, password) {
+    return this.auth.signInWithEmailAndPassword(email, password);
+  }
 }
 
 const firebase = new Firebase();

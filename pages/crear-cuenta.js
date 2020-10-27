@@ -21,7 +21,7 @@ const STATE_INICIAL = {
   password: "",
 };
 
-const Encabesazo = styled.h1`
+const Encabesado = styled.h1`
   text-align: center;
   margin-top: 5rem;
 `;
@@ -53,7 +53,7 @@ export default function CrearCuenta() {
     <div>
       <Layout>
         <>
-          <Encabesazo>Crear cuenta</Encabesazo>
+          <Encabesado>Crear cuenta</Encabesado>
           <Formulario onSubmit={handleSubmit}>
             <Campo>
               <label htmlFor="nombre"> Nombre </label>
